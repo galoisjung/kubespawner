@@ -49,12 +49,12 @@ c.KubeSpawner.profile_list = [
                 'choices': {
                     'pytorch': {
                         'display_name': 'Python 3 Training Notebook',
-                        'kubespawner_override': {'image': 'training/python:2022.01.01'},
+                        'kubespawner_override': {'image': 'jupyterhub/singleuser:1.0'},
                     },
                     'tf': {
                         'display_name': 'R 4.2 Training Notebook',
                         'default': True,
-                        'kubespawner_override': {'image': 'training/r:2021.12.03'},
+                        'kubespawner_override': {'image': 'jupyterhub/singleuser:1.0'},
                     },
                 },
             },
@@ -108,17 +108,17 @@ c.KubeSpawner.profile_list = [
             },
         },
         'kubespawner_override': {
-            'image': 'datascience/small:label',
+            'image': 'jupyterhub/singleuser:1.0',
         },
     },
     {
         'display_name': 'DataScience - Medium instance (GPUx2)',
         'slug': 'datascience-gpu2x',
         'kubespawner_override': {
-            'image': 'datascience/medium:label',
-            'cpu_limit': 48,
-            'mem_limit': '96G',
-            'extra_resource_guarantees': {"nvidia.com/gpu": "2"},
+            'image': 'jupyterhub/singleuser:1.0',
+            'cpu_limit': 1,
+            'mem_limit': '1G',
+            'extra_resource_guarantees': {"nvidia.com/gpu": "1"},
         },
     },
 ]
